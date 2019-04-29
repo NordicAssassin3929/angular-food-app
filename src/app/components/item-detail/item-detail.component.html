@@ -1,0 +1,27 @@
+<form *ngIf="item">
+  <div class="form-group">
+    <label>Name</label>
+    <label>
+      <input [(ngModel)]="item.name" type="email" name="name" class="form-control">
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea [(ngModel)]="item.description" name="description"
+              class="form-control rounded-0"
+              id="exampleFormControlTextarea1" rows="10"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <label>
+      <input [(ngModel)]="item.price" name="price" class="form-control">
+    </label>
+  </div>
+  <button (click)="add()" type="submit" class="btn btn-primary">Add</button>
+  <hr>
+  <button (click)="update()" type="submit" class="btn btn-primary">Update</button>
+  <hr>
+  <button (click)="delete()" type="submit" class="btn btn-primary">Delete</button>
+  <hr>
+  <button routerLink="/myorder/{{id}}" type="submit" class="btn btn-primary">Order</button>
+</form>
