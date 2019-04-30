@@ -3,4 +3,5 @@ export interface Order {
   app_user_id: number;
   order_time: Date;
   note: string;
+  item_id: number;
 }
