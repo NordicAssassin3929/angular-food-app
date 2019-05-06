@@ -3,6 +3,7 @@ import {ApiService} from "../../services/api.service";
 import {Order} from "../../interfaces/order";
 import {ActivatedRoute} from "@angular/router";
 import {MyOrder} from "../../interfaces/myorder";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-order',
@@ -15,14 +16,18 @@ export class OrderComponent implements OnInit {
   myOrder: MyOrder;
 
   constructor(private apiService: ApiService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private location: Location) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.apiService.getMyOrder(id)
+    this.apiService.getMyOrder()
       .subscribe((myorder) => {
         this.myOrder = myorder[0];
+        console.log(this.myOrder);
       });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

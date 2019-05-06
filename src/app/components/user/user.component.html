@@ -1,0 +1,33 @@
+<div class="container">
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">DOB</th>
+    <th scope="col">E-mail</th>
+    <th scope="col">Phone number</th>
+    <th scope="col">City</th>
+    <th scope="col">Postal code</th>
+    <th scope="col">Street</th>
+    <th scope="col">House number</th>
+  </tr>
+  </thead>
+  <tbody class="thead-light">
+  <tr *ngFor="let u of userinfo">
+    <th scope="row">{{u.first_name}}</th>
+    <th scope="row">{{u.last_name}}</th>
+    <th scope="row">{{u.dob}}</th>
+    <th scope="row">{{u.email}}</th>
+    <th scope="row">{{u.phone_number}}</th>
+    <th scope="row">{{u.city_name}}</th>
+    <th scope="row">{{u.postal_code}}</th>
+    <th scope="row">{{u.street}}</th>
+    <th scope="row">{{u.house_num}}</th>
+  </tr>
+  </tbody>
+</table>
+
+<hr>
+<button (click)="goBack()" type="submit" class="btn btn-primary">Back</button>
+</div>

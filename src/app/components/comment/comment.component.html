@@ -1,3 +1,28 @@
-<p>
-  comment works!
-</p>
+<div class="container">
+<table class="table table-bordered">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">All Reviews</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="thead-light" *ngFor="let comment of comments">
+    <th scope="row">{{comment.comment}}</th>
+  </tr>
+  </tbody>
+</table>
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea2">Post a review</label>
+    <textarea [(ngModel)]="comm" name="comment"
+              class="form-control rounded-0"
+              id="exampleFormControlTextarea2" rows="10"></textarea>
+  </div>
+  <div class="card-footer">
+    <a (click)="addComment()" class="btn btn-primary">Post it!</a>
+  </div>
+  <hr>
+  <button (click)="goBack()" type="submit" class="btn btn-primary">Back</button>
+</form>
+</div>
